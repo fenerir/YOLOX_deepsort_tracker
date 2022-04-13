@@ -7,7 +7,7 @@ from glob import glob
 
 
 def track_images(img_dir):
-    tracker = Tracker(model='yolox-s', ckpt='weights/yolox_s.pth.tar',filter_class=['truck','person','car'])
+    tracker = Tracker(model='yolox-s', ckpt='/content/yolox_s.pth',filter_class=['person'])
     imgs = glob(os.path.join(img_dir,'*.png')) + glob(os.path.join(img_dir,'*.jpg')) + glob(os.path.join(img_dir,'*.jpeg'))
     for path in imgs:
         im = cv2.imread(path)
